@@ -1,2 +1,3 @@
 __pycache__
-backend_server\modules\.env
+
+modules/
