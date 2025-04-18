@@ -1,7 +1,7 @@
 from dotenv import load_dotenv
 import os
 
-load_dotenv('/home/miro/python/server/iot_sensors/modules/.env')
+load_dotenv('/home/miro/envs.env')
 
 # print(repr(os.getenv('DATABASE_HOST')))
 # print(repr(os.getenv('DATABASE_USER')))

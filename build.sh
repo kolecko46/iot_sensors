@@ -86,7 +86,7 @@ Architecture: all
 Maintainer: Miro kolecani@gmail.com
 Depends: python3, python3-venv, python3-pip
 Section: web
-Description: Ichannel signaling server
+Description: iot sensors
 EOF
 
 # Build .deb package
