@@ -20,6 +20,12 @@ INSTALL_FOLDER="${BUILD_FOLDER}/opt/${APP_NAME}"
 REPO_FOLDER="${APP_ROOT_FOLDER}/repo"
 GIT_URL="https://github.com/kolecko46/iot_sensors.git"
 
+
+# 
+sudo rm -rf /home/miro/debpkgs/iotsensors/opt/iotsensors/env/lib/python3.11/site-packages/matplotlib
+# 
+
+
 echo "Clean old build"
 echo
 rm -rf $APP_ROOT_FOLDER

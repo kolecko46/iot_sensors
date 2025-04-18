@@ -2,6 +2,7 @@ import paho.mqtt.client as mqtt
 import modules.config as config
 import json
 from datetime import datetime
+from zoneinfo import ZoneInfo
 from modules.database_connector import get_db
 from modules.schemas import Dht11Data
 from modules.models import ClimateData
@@ -26,12 +27,10 @@ def on_message(client, userdata, msg):
     message = msg.payload.decode()
     json_data = json.loads(message)
 
-    time_now =datetime.now()
+    time_now =datetime.now(ZoneInfo('Europe/Bratislava'))
     formatted_time = time_now.strftime("%Y-%m-%d %H:%M:%S")
 
     json_data['measured_at'] = formatted_time
-
-    print(json_data)
 
     validated_data = Dht11Data(**json_data)
 

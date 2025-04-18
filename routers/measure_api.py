@@ -7,7 +7,7 @@ from modules.utils import create_plot
 
 router = APIRouter()
 
-@router.get('/dht11')
+@router.get('/temperature')
 def get_data(db:Session=Depends(get_db)):
     data = db.query(ClimateData).order_by(ClimateData.measured_at.desc()).limit(10).all()
 
@@ -24,5 +24,26 @@ def get_data(db:Session=Depends(get_db)):
     temperatures = temperatures[::-1]
 
     img = create_plot(timestamps, temperatures)
+
+    return Response(content=img.getvalue(), media_type="image/png")
+
+
+@router.get('/humidity')
+def get_data(db:Session=Depends(get_db)):
+    data = db.query(ClimateData).order_by(ClimateData.measured_at.desc()).limit(10).all()
+
+    timestamps = []
+    humidity = []
+
+    for time_record in data:
+        timestamps.append(time_record.measured_at.strftime("%H:%M:%S"))
+
+    for humidity_record in data:
+        humidity.append(humidity_record.humidity)
+
+    timestamps = timestamps[::-1]
+    humidity = humidity[::-1]
+
+    img = create_plot(timestamps, humidity)
 
     return Response(content=img.getvalue(), media_type="image/png")
