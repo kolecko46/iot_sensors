@@ -25,7 +25,7 @@ class Users(Base):
     password: Mapped[str] = mapped_column(String(255))
 
 class ClimateData(Base):
-    __tablename__ = 'climate_data'
+    __tablename__ = 'dht11_data'
 
     temperature: Mapped[str] = mapped_column(Integer)
     humidity: Mapped[str] = mapped_column(Integer)

@@ -1,7 +1,7 @@
 from dotenv import load_dotenv
 import os
 
-load_dotenv('C:/Users/Miro/python/BackEnd/hw_3_orm/modules/.env')
+load_dotenv('/home/miro/python/server/iot_sensors/modules/.env')
 
 # print(repr(os.getenv('DATABASE_HOST')))
 # print(repr(os.getenv('DATABASE_USER')))
