@@ -2,13 +2,6 @@ from pydantic import BaseModel, EmailStr
 from typing import Optional
 from datetime import datetime
 
-class BookBody(BaseModel):
-    name: str
-    author: str
-
-class GetBook(BaseModel):
-    name: str
-
 class User(BaseModel):
     name: EmailStr
     password: str

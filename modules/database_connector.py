@@ -11,11 +11,16 @@ session_local = sessionmaker(autocommit=False,
                              autoflush=False,
                              bind=engine)
 
-
-
 def get_db():
     database = session_local()
     try:
         yield database
     finally:
         database.close()
+
+def check_db_connection(database):
+    try:
+        database.execute("SELECT 1")
+        return True
+    except: 
+        return False

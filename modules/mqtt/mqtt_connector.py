@@ -17,7 +17,7 @@ CLIENT_ID = 'BackendServer'
 
 def on_connect(client, userdata, flags, rc):
     if rc == 0:
-        print('Connected to MQTT server')
+        # print('Connected to MQTT server')
         client.subscribe(TOPIC)
     else:
         print('MQTT server is not running')
