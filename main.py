@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from routers import users_api, measure_api, status
-from modules.mqtt.mqtt_connector import mqtt_start
+from modules.mqtt_connector import mqtt_start
 from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
@@ -14,7 +14,6 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
 
 @app.get('/')
 def root():

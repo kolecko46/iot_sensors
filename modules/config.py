@@ -2,6 +2,7 @@ from dotenv import load_dotenv
 import os
 
 load_dotenv('/home/miro/envs/.env')
+load_dotenv('C:/Users/Miro/python/BackEnd_raspberry/iot_sensors/modules/.env')
 
 DATABASE_HOST = os.getenv('DATABASE_HOST')
 DATABASE_USER = os.getenv('DATABASE_USER')
